@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Validator {
 
-    // check if given input is more than 99
+    // check if given input is more than 99 and if it's not even
     public void validateInput(int row, int col) throws Exception {
         if (row > 99 || col > 99) {
             throw new MoreThanOneHundredException("Area has to be less than 100 lines and less than 100 columns");
