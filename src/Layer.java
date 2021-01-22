@@ -16,23 +16,23 @@ public class Layer {
 
         // try to fill in row and check bound, if has empty place and if over layer one
         if (this.brick.isInBound(start, end, row, col - 1) && this.brick.hasEmptyPlace(layerTwo, start, end, start, end + 1)
-                && this.brick.isOverLayoutOne(layerOne, start, end, start, end + 1)) {
+                && this.brick.isOverLayertOne(layerOne, start, end, start, end + 1)) {
 
-            this.brick.setBrickInLayout(layerTwo, start, end, start, end + 1, k);
+            this.brick.setBrickInLayer(layerTwo, start, end, start, end + 1, k);
             isTaken = move(layerOne, layerTwo, start, end + 1, k, isTaken);
 
             if (!isTaken) {
-                this.brick.setBrickInLayout(layerTwo, start, end, start, end + 1, 0);
+                this.brick.setBrickInLayer(layerTwo, start, end, start, end + 1, 0);
             }
             // try to fill in col and check bound, if has empty place and if over layer one
         } else if (this.brick.isInBound(start, end, row - 1, col) && this.brick.hasEmptyPlace(layerTwo, start, end, start + 1, end) &&
-                this.brick.isOverLayoutOne(layerOne, start, end, start + 1, end)) {
+                this.brick.isOverLayerOne(layerOne, start, end, start + 1, end)) {
 
-            this.brick.setBrickInLayout(layerTwo, start, end, start + 1, end, k);
+            this.brick.setBrickInLayer(layerTwo, start, end, start + 1, end, k);
             isTaken = move(layerOne, layerTwo, start, end, k, isTaken);
 
             if (!isTaken) {
-                this.brick.setBrickInLayout(layerTwo, start, end, start + 1, end, 0);
+                this.brick.setBrickInLayer(layerTwo, start, end, start + 1, end, 0);
             }
         }
         return isTaken;
