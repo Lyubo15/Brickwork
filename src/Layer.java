@@ -16,7 +16,7 @@ public class Layer {
 
         // try to fill in row and check bound, if has empty place and if over layer one
         if (this.brick.isInBound(start, end, row, col - 1) && this.brick.hasEmptyPlace(layerTwo, start, end, start, end + 1)
-                && this.brick.isOverLayertOne(layerOne, start, end, start, end + 1)) {
+                && this.brick.isOverLayerOne(layerOne, start, end, start, end + 1)) {
 
             this.brick.setBrickInLayer(layerTwo, start, end, start, end + 1, k);
             isTaken = move(layerOne, layerTwo, start, end + 1, k, isTaken);
